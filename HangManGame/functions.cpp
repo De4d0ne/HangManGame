@@ -19,8 +19,15 @@ void welcomeMessage() {
 void reciveWord(std::string& word) {
 
     std::cout << "Enter word for other player to guess: ";
-    std::cin >> word;
-    std::cout << "\n";
+
+    while ((c = _getch()) != '\r' && std::isalpha(c)) {  // thiss loop replaces input displayed in console with '*'. needed to hide word from 2nd player
+
+        word.push_back(c);
+        std::cout << '*';
+
+    }
+
+    std::cout << std::endl;
 
 }
 
